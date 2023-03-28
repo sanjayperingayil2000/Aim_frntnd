@@ -1,0 +1,169 @@
+.auth {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: var(--bgGradient);
+    @media (max-width: 1080px) {
+        height: auto;
+        min-height: 100vh;
+        padding: 100px 0;
+    }
+
+    @media (max-width: 1200px) {
+        background: var(--accent);
+    }
+
+    * {
+        font-family: var(--fontSpecial) !important;
+    }
+
+    .container {
+        height: 100vh;
+        @media (max-width: 992px) {
+            height: auto;
+        }
+    }
+
+    .row {
+        height: 100vh;
+        @media (max-width: 992px) {
+            height: auto;
+        }
+    }
+
+    &__logo {
+        max-width: 515px;
+        overflow: hidden;
+        @media (max-width: 1200px) {
+            max-width: 300px;
+        }
+        @media (max-width: 1080px) {
+            max-width: 280px;
+        }
+        @media (max-width: 992px) {
+            max-width: 180px;
+            margin-bottom: 150px;
+        }
+        @media (max-width: 540px) {
+            margin-bottom: 50px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .desktop {
+            display: block;
+            @media(max-width: 1200px) {
+                display: none;
+            }
+        }
+
+        .mobile {
+            display: none;
+            @media(max-width: 1200px) {
+                display: block;
+            }
+        }
+    }
+
+    &__title {
+        font-size: 62px;
+        color: var(--white);
+        margin: 0;
+        @media(max-width: 1440px) {
+            font-size: 48px;
+        }
+    }
+    
+    &__sub {
+        font-size: 20px;
+        color: var(--textLite);
+        @media(max-width: 1440px) {
+            font-size: 16px;
+        }
+    }
+
+    &__form {
+        display: block;
+        margin-top: 50px;
+
+        .form-group {
+            margin-bottom: 25px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .form-label {
+            color: var(--white);
+            margin-bottom: 15px;
+            font-size: 20px;
+            background-color: transparent;
+            position: relative;
+            top: auto;
+            left: auto;
+            padding: 0;
+            @media(max-width: 1440px) {
+                font-size: 14px;
+            }
+        }
+
+        .click {
+            margin-top: 40px;
+        }
+    }
+
+    &__input {
+        height: 55px !important;
+        border-radius: 4px !important;
+        @media(max-width: 1440px) {
+            height: 50px !important;
+        }
+    }
+
+    &__forgot {
+        display: block;
+        text-align: right;
+        font-size: 16px;
+        white-space: nowrap;
+        color: var(--primary);
+        transition: var(--transition-sm);
+        &:hover {
+            color: var(--white);
+        }
+
+        @media(max-width: 1440px) {
+            font-size: 13px;
+        }
+    }
+
+    &__back {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-size: 20px;
+        color: var(--primary);
+        margin-top: 40px;
+        transition: var(--transition-sm);
+        &:hover {
+            color: var(--white);
+        }
+
+        @media(max-width: 1600px) {
+            font-size: 18px;
+        }
+        @media(max-width: 1440px) {
+            font-size: 16px;
+        }
+    }
+}
+@media (max-width: 992px) {
+    .aim_login_logo{
+        max-width: 180px;
+        margin-bottom: 70px;
+    }
+}

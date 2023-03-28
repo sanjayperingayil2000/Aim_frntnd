@@ -1,0 +1,230 @@
+.asset-tab {
+    display: block;
+    position: relative;
+    margin-bottom: 3px;
+}
+
+.tab-header {
+    width: 100%;
+    background-color: var(--accent) !important;
+    height: 75px;
+    padding: 25px 30px;
+    border-radius: 5px 5px 0 0;
+    @media(max-width: 1600px) {
+        height: 50px !important;
+        padding: 10px !important;
+    }
+
+    .tab-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        position: relative;
+        cursor: pointer !important;
+        @media(max-width: 1600px) {
+            gap: 3px;
+        }
+        @media(max-width: 1440px) {
+            gap: 0;
+        }
+    }
+}
+
+.tab-content {
+    position: relative;
+   
+    padding: 45px 35px 45px;
+    background-color: var(--white);
+    @media(max-width: 1600px) {
+        padding: 30px 25px 30px;
+    }
+
+    .tab-col {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+}
+
+.tab-divider {
+    margin: 35px 0;
+    height: 3px;
+    background-color: var(--bgColor);
+    border: none;
+    width: 105%;
+    opacity: 1;
+    position: relative;
+    left: -35px;
+}
+
+.tab-inner-title {
+    font-size: 15px;
+    color: var(--textColor);
+    margin: 0 0 20px;
+    font-family: var(--fontAlt) !important;
+    font-weight: 600;
+    padding: 0 5px;
+    @media(max-width: 1440px) {
+        font-size: 13px;
+    }
+}
+
+.defective-photos {
+
+    .row {
+        div {
+            padding-left: 35px;
+            padding-right: 35px;
+            @media(max-width: 992px) {
+             padding-left: 15px;
+             padding-right: 15px;   
+            }
+            &:first-child {
+                padding-left: 15px;
+            }
+            &:last-child {
+                padding-right: 15px;
+            }
+        }
+    }
+
+    .defect-img {
+        width: 100%;
+        height: 315px;
+        object-fit: cover;
+        @media(max-width: 1600px) {
+            height: 220px;
+        }
+        @media(max-width: 992px) {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.MuiStep-horizontal {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    @media(max-width: 1440px) {
+        padding-left: 5px !important;
+        padding-right: 0 !important;
+    }
+}
+
+.MuiStepConnector-line {
+    border-color: var(--primary) !important;
+}
+
+.MuiStepLabel-label {
+    color: var(--white) !important;
+    font-family: var(--fontRegular) !important;
+    font-weight: 400 !important;
+    @media(max-width: 1600px) {
+        font-size: 13px !important;
+    }
+    @media(max-width: 1440px) {
+        font-size: 12px !important;
+    }
+}
+
+.MuiStepIcon-root {
+    width: 30px !important;
+    height: 30px !important;
+    color: var(--accent) !important;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    @media(max-width: 1600px) {
+        width: 25px !important;
+        height: 25px !important;
+    }
+
+    @media(max-width: 1440px) {
+        width: 20px !important;
+        height: 20px !important;
+    }
+}
+
+.MuiStepIcon-root.MuiStepIcon-active {
+    color: var(--primary) !important;
+    border: none !important;
+}
+
+.MuiStepIcon-root.MuiStepIcon-completed {
+    color: var(--primary) !important;
+    border: none !important;
+    background-color: var(--white);
+}
+
+.MuiStepper-root {
+    @media(max-width: 1080px) {
+        padding: 10px;
+    }
+    @media(max-width: 992px) {
+        padding: 24px 10px !important; 
+    }
+}
+
+.MuiStepConnector-lineHorizontal {
+    @media(max-width: 1440px) {
+        position: relative;
+        left: 8px;
+        max-width: 75%;
+    }
+}
+
+.MuiStepper-horizontal {
+    @media(max-width: 992px) {
+        flex-direction: column !important;
+        height: auto;
+        align-items: flex-start !important;
+        gap: 10px;   
+    }
+}
+
+.nodisplay{
+  opacity: 0000;
+}
+
+.success{
+    background-color: var(--green);
+}
+
+.asset-pdf {
+    margin-top: 50px;
+
+    .pdf-title {
+        display: block;
+        font-size: 16px;
+        color: var(--primary);
+        margin-bottom: 15px;
+        margin-top: 15px;
+        @media(max-width: 1440px) {
+            font-size: 14px;
+        }
+    }
+
+    .tab-divider {
+        margin: 20px 0;
+        background-color: var(--white);
+    }
+}
+
+.app__wrapper {
+    &.open {
+        .tab-item {
+            &::after {
+                width: 75px;
+                right: -86px;
+            }
+        }
+    }
+}
+
+.no-data {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 25px;
+}

@@ -1,0 +1,159 @@
+.app {
+    &__filter {
+        background-color: var(--white);
+        border-radius: 5px;
+        border: 1px solid var(--borderLite);
+        border-left: 4px solid var(--primary);
+        width: 100%;
+        transition: var(--transition-sm);
+        margin-bottom: 30px;
+        &.show {
+            padding: 30px;
+            @media(max-width: 1600px) {
+                padding: 25px;
+            }
+            @media(max-width: 1440px) {
+                margin-bottom: 20px;
+            }
+            @media(max-width: 992px) {
+                padding: 30px 25px 30px;
+            }
+        }
+
+        &.asset_filter {
+            max-height: 0;
+            opacity: 0;
+            margin-bottom: 0;
+            transition: var(--transition-md);
+            
+            &.show {
+                max-height: 100vh;
+                opacity: 1;
+                margin-bottom: 30px;
+                transition: var(--transition-md);
+            }
+        }
+        &.work_filter {
+            max-height: 0;
+            opacity: 0;
+            margin-bottom: 0;
+            transition: var(--transition-md);
+            
+            &.show {
+                max-height: 100vh;
+                opacity: 1;
+                margin-bottom: 30px;
+                transition: var(--transition-md);
+            }
+        }
+    }
+}
+
+.filter {
+    &__group {
+        display: block;
+        margin-bottom: 20px;
+        position: relative;
+
+        &.select_icon {
+            &::after {
+                content: '';
+                width: 18px;
+                height: 18px;
+                overflow: hidden;
+                background-image: url(../assets/img/chevronalt.svg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 20px;
+                z-index: 1;
+                pointer-events: none;
+            }
+        }
+
+        &.date_icon {
+            &::after {
+                content: '';
+                width: 22px;
+                height: 22px;
+                overflow: hidden;
+                background-image: url(../assets/img/calendaralt.svg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-color: var(--white);
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 20px;
+                z-index: 1;
+                pointer-events: none;
+            }
+        }
+    }
+
+    &__label {
+        display: inline-block;
+        margin: 0;
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--textLite);
+        padding: 2px 8px;
+        background-color: var(--white);
+        position: absolute;
+        top: -13px;
+        left: 13px;
+        z-index: 1;
+    }
+
+    &__select, &__input, &__date {
+        height: 55px;
+        border-radius: 2px;
+        background-color: var(--white);
+        border: 1px solid var(--border);
+        color: var(--textColor);
+        padding: 0 20px;
+        font-size: 15px;
+        font-weight: 500;
+        transition: var(--transition-sm);
+
+        &:placeholder {
+            color: var(--textColor);
+        }
+
+        &:focus {
+            box-shadow: none;
+            border-color: var(--primary);
+        }
+    }
+
+    &__select {
+        background: none;
+        background-color: var(--white);
+        cursor: pointer;
+    }
+
+    &__date {
+        cursor: pointer;
+        &::-webkit-inner-spin-button, &::-webkit-calendar-picker-indicator {
+            cursor: pointer;
+        }
+    }
+}
+
+@media(min-width: 1200px) {
+    .generate-btn {
+        min-width: 165px !important;
+
+        span {
+            white-space: nowrap;
+        }
+    }
+    
+    .filter-btn {
+        min-width: 110px;
+    }
+}

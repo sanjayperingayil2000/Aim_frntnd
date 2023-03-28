@@ -1,0 +1,105 @@
+.app {
+    &__card {
+        display: block;
+        position: relative;
+        margin-bottom: 3px;
+        @media (max-width: 1080px) {
+            margin-bottom: 30px;
+        }
+
+        &.remove-header {
+            margin-bottom: 5px;
+            .app__card--body {
+                padding: 25px 40px 35px;
+                border-radius: 5px;
+            }
+            .app__card--header {
+                display: none;
+            }
+        }
+
+        &.chart-card {
+            .app__card--body {
+                padding: 40px;
+                @media(max-width: 1600px) {
+                    padding: 25px;
+                }
+                @media(max-width: 1440px) {
+                    padding: 20px;
+                }
+            }
+
+            &.dual {
+                height: 100%;
+                overflow: hidden;
+
+                .app__card--body {
+                    height: 100%;
+                }
+            }
+        }
+
+        &.locator-card {
+            position: relative;
+            
+            .app__card--body {
+                padding: 30px;
+            }
+        }
+
+        &--header {
+            display: block;
+            background-color: var(--accent);
+            padding: 10px 15px;
+            border-radius: 5px 5px 0 0;
+        }
+
+        &--body {
+            display: block;
+            background-color: var(--white);
+            padding: 40px 40px 20px;
+            @media(max-width: 992px) {
+                padding: 30px 25px 5px;   
+            }
+        }
+
+        .card-title {
+            display: block;
+            margin: 0;
+            font-size: 16px;
+            color: var(--white);
+            font-family: var(--fontRegular) !important;
+            @media(max-width: 1600px) {
+                font-size: 14px;
+            }
+            @media(max-width: 992px) {
+                font-size: 18px;
+            }
+            @media(max-width: 540px) {
+                font-size: 16px;
+            }
+        }
+
+        .card-subtitle {
+            display: block;
+            margin: 0;
+            font-size: 20px;
+            color: var(--textColor);
+            font-family: var(--fontRegular) !important;
+            @media(max-width: 992px) {
+                white-space: nowrap;
+            }
+            @media(max-width: 540px) {
+                margin-bottom: 20px;
+                white-space: unset;
+            }
+        }
+    }
+}
+
+.spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
