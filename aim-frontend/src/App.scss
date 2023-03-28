@@ -1,0 +1,288 @@
+@import "scss/variables";
+@import "scss/reset";
+@import "scss/buttons";
+@import "scss/auth";
+@import "scss/header";
+@import "scss/sidebar";
+@import "scss/filter";
+@import "scss/table";
+@import "scss/form";
+@import "scss/calendar";
+@import "scss/card";
+@import "scss/tab";
+@import "scss/accordion";
+@import "scss/dashboard";
+@import "scss/modal";
+@import "scss/errors";
+
+// Fonts
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap');
+
+@font-face {
+    font-family: halveticaRegular;
+    src: url(./assets/fonts/helvetica-regular.ttf);
+}
+
+@font-face {
+    font-family: halveticaBold;
+    src: url(./assets/fonts/helvetica-bold.ttf);
+}
+
+@font-face {
+    font-family: gilroy;
+    src: url(./assets/fonts/gilroy.ttf);
+}
+
+.app {
+    position: relative;
+    padding-top: 65px;
+    min-height: 100vh;
+    background-color: var(--bgColor);
+
+    @media(max-width: 1440px) {
+        padding-top: 55px;
+    }
+
+    &__wrapper {
+        position: relative;
+        padding: 25px;
+        background-color: var(--bgColor);
+        margin-left: 83px;
+        transition: var(--transition-md);
+        @media(max-width: 1440px) {
+            padding: 20px;
+        }
+        @media(max-width: 992px) {
+            margin-left: 0;
+        }
+        &.open {
+            margin-left: 250px;
+            @media(max-width: 1440px) {
+                margin-left: 220px;
+            }
+            @media(max-width: 992px) {
+                margin-left: 0;
+            }
+        }
+    }
+
+    &__header {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+        margin-bottom: 25px;
+        @media(max-width: 1600px) {
+            margin-bottom: 20px;
+        }
+        @media(max-width: 1080px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .app__btns {
+            max-width: 60%;
+            @media(max-width: 1440px) {
+                max-width: none;
+            }
+        }
+
+        &--title {
+            font-size: 26px;
+            font-family: var(--fontBold) !important;
+            color: var(--textColor);
+            margin: 0 0 5px;
+            @media(max-width: 1600px) {
+                font-size: 24px;
+            }
+            @media(max-width: 1440px) {
+                font-size: 21px;
+            }
+        }
+
+        &--subtitle {
+            font-size: 20px;
+            font-family: var(--fontAlt) !important;
+            font-weight: 400;
+            color: var(--textLite);
+            margin: 0;
+            &:empty {
+                display: none;
+            }
+            @media(max-width: 1600px) {
+                font-size: 18px;
+            }
+            @media(max-width: 1440px) {
+                font-size: 16px;
+            }
+        }
+
+        &--wrapper {
+            @media(max-width: 1080px) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        background-color: var(--white);
+        border-radius: 0 0 5px 5px;
+        padding: 20px;
+        gap: 25px;
+        margin-top: 30px;
+        @media(max-width: 992px) {
+            margin-top: 20px;     
+        }
+        @media(max-width: 540px) {
+            padding: 20px 25px;
+            flex-direction: column;
+            gap: 20px;       
+        }
+
+        &.mt-0 {
+            margin-top: 3px !important;
+        }
+    }
+}
+
+.d-flex {
+    @media(max-width: 540px) {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+}
+
+.alert-fixed {
+    position: fixed;
+    z-index: 9999;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.asset-locator {
+    display: block;
+    width: 100%;
+    height: 550px;
+    border-radius: 8px;
+    overflow: hidden;
+    @media(max-width: 1440px) {
+        height: 420px;
+    }
+    @media(max-width: 992px) {
+        height: 350px;
+    }
+
+    iframe {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.status-flag {
+    display: inline-block;
+    font-size: 14px;
+    color: var(--textColor);
+    @media(max-width: 1600px) {
+        font-size: 12px;
+    }
+    
+    img {
+        height: 24px;
+        object-fit: contain;
+        margin-right: 10px;
+        @media(max-width: 1600px) {
+            height: 20px;
+        }
+    }
+}
+
+.status {
+    &.active {
+        color: var(--green) !important;
+    }
+    &.disable {
+        color: var(--red) !important;
+    }
+}
+
+.repairs-done {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    // gap: 5px;
+    max-width: 50%;
+    margin-bottom: 0;
+
+    &.corrective {
+        max-width: 75%;
+        gap: 0;
+    }
+
+    p {
+        text-align: left;
+        font-size: 14px;
+        color: var(--textColor);
+        margin-top: 1px;
+        @media(max-width: 1600px) {
+            font-size: 12px;
+        }
+    }
+
+    span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+
+        svg {
+            color: var(--white);
+            width: 11px;
+            height: 11px;
+        }
+
+        &.failed {
+            background-color: var(--red);
+        }
+
+        &.passed {
+            background-color: var(--green);
+        }
+    }
+}
+
+.row-adjust {
+    .col-lg-6 {
+        @media(max-width: 1080px) {
+            width: 100%;
+        }
+    }
+}
+.user-license--table th{
+    padding: 12px 15px !important;
+    line-height: 24px;
+}
+.user-license--table td{
+    padding: 12px 15px !important;
+    line-height: 24px;
+}
+.user-license--table .license-head{
+    background: #cfcfd138;
+    color: #ea2a2a;
+    font-weight: 500;
+    text-align: center;
+}
+.apexcharts-xcrosshairs.apexcharts-active{
+    opacity: 0;
+    display: none;
+}
+.apexcharts-text tspan{
+    text-transform: capitalize;
+}
